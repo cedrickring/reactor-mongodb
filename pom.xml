@@ -4,9 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.cedrickring</groupId>
+    <groupId>com.github.cedrickring</groupId>
     <artifactId>reactor-mongodb</artifactId>
-    <version>1.6</version>
+    <version>1.7</version>
+    <description>A wrapper over the mongodb-async api with Reactor (http://projectreactor.io/)</description>
 
     <properties>
         <kotlin.version>1.2.41</kotlin.version>
@@ -20,6 +21,13 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+
+    <developers>
+        <developer>
+            <name>Cedric Kring</name>
+            <email>cedric.kring@gmail.com</email>
+        </developer>
+    </developers>
 
     <build>
         <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>

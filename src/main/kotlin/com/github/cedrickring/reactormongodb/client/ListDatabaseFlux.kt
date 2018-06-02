@@ -1,4 +1,4 @@
-package com.cedrickring.reactormongodb.client
+package com.github.cedrickring.reactormongodb.client
 
 import reactor.core.CoreSubscriber
 import reactor.core.publisher.Flux

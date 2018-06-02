@@ -1,6 +1,6 @@
-package com.cedrickring.reactormongodb.database.flux
+package com.github.cedrickring.reactormongodb.database.flux
 
-import com.cedrickring.reactormongodb.database.ReactiveDatabase
+import com.github.cedrickring.reactormongodb.database.ReactiveDatabase
 import reactor.core.CoreSubscriber
 import reactor.core.publisher.Flux
 

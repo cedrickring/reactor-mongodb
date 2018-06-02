@@ -1,7 +1,7 @@
-package com.cedrickring.reactormongodb.database
+package com.github.cedrickring.reactormongodb.database
 
-import com.cedrickring.reactormongodb.collection.ReactiveCollection
-import com.cedrickring.reactormongodb.database.flux.ListCollectionFlux
+import com.github.cedrickring.reactormongodb.collection.ReactiveCollection
+import com.github.cedrickring.reactormongodb.database.flux.ListCollectionFlux
 import com.mongodb.ReadConcern
 import com.mongodb.ReadPreference
 import com.mongodb.WriteConcern

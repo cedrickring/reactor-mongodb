@@ -1,6 +1,6 @@
-package com.cedrickring.reactormongodb.collection.flux
+package com.github.cedrickring.reactormongodb.collection.flux
 
-import com.cedrickring.reactormongodb.collection.ReactiveCollection
+import com.github.cedrickring.reactormongodb.collection.ReactiveCollection
 import com.mongodb.client.model.changestream.ChangeStreamDocument
 import org.bson.conversions.Bson
 import reactor.core.CoreSubscriber

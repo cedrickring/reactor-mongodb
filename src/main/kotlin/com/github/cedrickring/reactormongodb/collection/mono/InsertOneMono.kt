@@ -1,6 +1,6 @@
-package com.cedrickring.reactormongodb.collection.mono
+package com.github.cedrickring.reactormongodb.collection.mono
 
-import com.cedrickring.reactormongodb.collection.ReactiveCollection
+import com.github.cedrickring.reactormongodb.collection.ReactiveCollection
 import com.mongodb.client.model.InsertOneOptions
 import reactor.core.CoreSubscriber
 import reactor.core.publisher.Mono

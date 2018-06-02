@@ -1,6 +1,6 @@
-package com.cedrickring.reactormongodb.collection.mono
+package com.github.cedrickring.reactormongodb.collection.mono
 
-import com.cedrickring.reactormongodb.collection.ReactiveCollection
+import com.github.cedrickring.reactormongodb.collection.ReactiveCollection
 import com.mongodb.bulk.BulkWriteResult
 import com.mongodb.client.model.BulkWriteOptions
 import com.mongodb.client.model.WriteModel

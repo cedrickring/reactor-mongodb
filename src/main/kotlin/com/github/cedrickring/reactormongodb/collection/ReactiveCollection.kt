@@ -1,7 +1,7 @@
-package com.cedrickring.reactormongodb.collection
+package com.github.cedrickring.reactormongodb.collection
 
-import com.cedrickring.reactormongodb.collection.flux.*
-import com.cedrickring.reactormongodb.collection.mono.*
+import com.github.cedrickring.reactormongodb.collection.flux.*
+import com.github.cedrickring.reactormongodb.collection.mono.*
 import com.mongodb.MongoNamespace
 import com.mongodb.ReadConcern
 import com.mongodb.ReadPreference
@@ -124,26 +124,26 @@ class ReactiveCollection<T>(var nativeCollection: MongoCollection<T>) {
     }
 
 
-    fun <NewT> withDocumentClass(clazz: Class<NewT>): ReactiveCollection<NewT> {
-        return ReactiveCollection(nativeCollection.withDocumentClass(clazz))
+    fun <NewT> withDocumentClass(clazz: Class<NewT>): com.github.cedrickring.reactormongodb.collection.ReactiveCollection<NewT> {
+        return com.github.cedrickring.reactormongodb.collection.ReactiveCollection(nativeCollection.withDocumentClass(clazz))
     }
 
-    fun withCodecRegistry(codecRegistry: CodecRegistry): ReactiveCollection<T> {
+    fun withCodecRegistry(codecRegistry: CodecRegistry): com.github.cedrickring.reactormongodb.collection.ReactiveCollection<T> {
         nativeCollection = nativeCollection.withCodecRegistry(codecRegistry)
         return this
     }
 
-    fun withReadPreference(readPreference: ReadPreference): ReactiveCollection<T> {
+    fun withReadPreference(readPreference: ReadPreference): com.github.cedrickring.reactormongodb.collection.ReactiveCollection<T> {
         nativeCollection = nativeCollection.withReadPreference(readPreference)
         return this
     }
 
-    fun withWriteConcern(writeConcern: WriteConcern): ReactiveCollection<T> {
+    fun withWriteConcern(writeConcern: WriteConcern): com.github.cedrickring.reactormongodb.collection.ReactiveCollection<T> {
         nativeCollection = nativeCollection.withWriteConcern(writeConcern)
         return this
     }
 
-    fun withReadConcern(readConcern: ReadConcern): ReactiveCollection<T> {
+    fun withReadConcern(readConcern: ReadConcern): com.github.cedrickring.reactormongodb.collection.ReactiveCollection<T> {
         nativeCollection = nativeCollection.withReadConcern(readConcern)
         return this
     }

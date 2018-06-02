@@ -1,6 +1,6 @@
-package com.cedrickring.reactormongodb.client
+package com.github.cedrickring.reactormongodb.client
 
-import com.cedrickring.reactormongodb.database.ReactiveDatabase
+import com.github.cedrickring.reactormongodb.database.ReactiveDatabase
 import com.mongodb.ConnectionString
 import com.mongodb.MongoClientSettings
 import com.mongodb.async.client.MongoClient
@@ -18,7 +18,7 @@ class ReactiveMongoClient private constructor(val mongoClient: MongoClient) {
         fun fromConnectionString(connectionString: ConnectionString) = ReactiveMongoClient(MongoClients.create(connectionString))
 
         @JvmStatic
-        fun fromSettings(settings: MongoClientSettings): ReactiveMongoClient = ReactiveMongoClient(MongoClients.create(settings))
+        fun fromSettings(settings: MongoClientSettings) = ReactiveMongoClient(MongoClients.create(settings))
 
     }
 
