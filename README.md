@@ -49,7 +49,7 @@ val client = ReactiveMongoClient.fromURI("mongodb://<URL>")
 val database = client.getDatabase("name")
 
 //in Kotlin we have some useful methods to avoid usage of T::class.java
-val collection = client.collection<Type>("<name>")
+val collection = database.collection<Type>("<name>")
 
 //find documents of a specific type
 val find: Flux<Type> = collection.findWithType<Type>(Filters.eq("my", "filter"))
