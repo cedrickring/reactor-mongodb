@@ -1,5 +1,5 @@
 # Reactor MongoDB
-A wrapper over the mongodb-async api with Reactor (http://projectreactor.io/) written in Kotlin, but fully compatible
+A wrapper built upon the mongodb-async api with Reactor (http://projectreactor.io/) written in Kotlin, but fully compatible
 with Java (due to `@JvmOverloads`).
 
 ## Dependencies
