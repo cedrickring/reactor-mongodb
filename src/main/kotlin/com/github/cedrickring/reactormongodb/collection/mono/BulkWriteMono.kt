@@ -12,13 +12,13 @@ class BulkWriteMono<T>(private val reactiveCollection: ReactiveCollection<T>,
                        private val bulkWriteOptions: BulkWriteOptions) : Mono<BulkWriteResult>() {
 
     override fun subscribe(actual: CoreSubscriber<in BulkWriteResult>?) {
-        reactiveCollection.nativeCollection.bulkWrite(documents, bulkWriteOptions, { result, throwable ->
+        reactiveCollection.nativeCollection.bulkWrite(documents, bulkWriteOptions) { result, throwable ->
             if (throwable == null) {
                 actual?.onNext(result)
             } else {
                 actual?.onError(throwable)
             }
-        })
+        }
     }
 
 }

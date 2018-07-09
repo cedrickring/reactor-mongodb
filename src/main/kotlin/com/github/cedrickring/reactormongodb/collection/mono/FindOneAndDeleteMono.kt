@@ -11,13 +11,13 @@ class FindOneAndDeleteMono<T>(private val reactiveCollection: ReactiveCollection
                               private val findOneAndDeleteOptions: FindOneAndDeleteOptions) : Mono<T>() {
 
     override fun subscribe(actual: CoreSubscriber<in T>?) {
-        reactiveCollection.nativeCollection.findOneAndDelete(filter, findOneAndDeleteOptions, { document, throwable ->
+        reactiveCollection.nativeCollection.findOneAndDelete(filter, findOneAndDeleteOptions) { document, throwable ->
             if (throwable == null) {
                 actual?.onNext(document)
             } else {
                 actual?.onError(throwable)
             }
-        })
+        }
     }
 
 }

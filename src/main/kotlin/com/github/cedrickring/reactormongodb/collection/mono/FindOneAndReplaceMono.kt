@@ -12,13 +12,13 @@ class FindOneAndReplaceMono<T>(private val reactiveCollection: ReactiveCollectio
                                private val findOneAndReplaceOptions: FindOneAndReplaceOptions) : Mono<T>() {
 
     override fun subscribe(actual: CoreSubscriber<in T>?) {
-        reactiveCollection.nativeCollection.findOneAndReplace(filter, replacement, findOneAndReplaceOptions, { document, throwable ->
+        reactiveCollection.nativeCollection.findOneAndReplace(filter, replacement, findOneAndReplaceOptions) { document, throwable ->
             if (throwable == null) {
                 actual?.onNext(document)
             } else {
                 actual?.onError(throwable)
             }
-        })
+        }
     }
 
 }

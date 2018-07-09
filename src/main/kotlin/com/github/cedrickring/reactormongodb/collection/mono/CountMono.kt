@@ -13,13 +13,13 @@ class CountMono<T>(private val reactiveCollection: ReactiveCollection<T>,
 
     override fun subscribe(actual: CoreSubscriber<in Long>?) {
         reactiveCollection.nativeCollection.count(filter ?: Document(), countOptions
-                ?: CountOptions(), { count, throwable ->
+                ?: CountOptions()) { count, throwable ->
             if (throwable != null) {
                 actual?.onError(throwable)
             } else {
                 actual?.onNext(count)
             }
-        })
+        }
     }
 
 }

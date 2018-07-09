@@ -18,7 +18,7 @@ class ReactiveDatabase(private var mongoDatabase: MongoDatabase) {
     fun listCollectionNames(): Flux<String> = ListCollectionFlux(this)
 
     fun createCollection(name: String, errorCallback: (error: Throwable?) -> Unit = {}) {
-        mongoDatabase.createCollection(name, { _, throwable -> errorCallback(throwable) })
+        mongoDatabase.createCollection(name) { _, throwable -> errorCallback(throwable) }
     }
 
     fun getCollection(name: String): ReactiveCollection<Document> {

@@ -10,13 +10,13 @@ class InsertOneMono<T>(private val reactiveCollection: ReactiveCollection<T>,
                        private val insertOneOptions: InsertOneOptions) : Mono<Void>() {
 
     override fun subscribe(actual: CoreSubscriber<in Void>?) {
-        reactiveCollection.nativeCollection.insertOne(document, insertOneOptions, { void, throwable ->
+        reactiveCollection.nativeCollection.insertOne(document, insertOneOptions) { void, throwable ->
             if (throwable == null) {
                 actual?.onNext(void)
             } else {
                 actual?.onError(throwable)
             }
-        })
+        }
     }
 
 }

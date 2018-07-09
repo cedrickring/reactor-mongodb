@@ -13,13 +13,13 @@ class ReplaceOneMono<T>(private val reactiveCollection: ReactiveCollection<T>,
                         private val replaceOptions: ReplaceOptions) : Mono<UpdateResult>() {
 
     override fun subscribe(actual: CoreSubscriber<in UpdateResult>?) {
-        reactiveCollection.nativeCollection.replaceOne(filter, replacement, replaceOptions, { updateResult, throwable ->
+        reactiveCollection.nativeCollection.replaceOne(filter, replacement, replaceOptions) { updateResult, throwable ->
             if (throwable == null) {
                 actual?.onNext(updateResult)
             } else {
                 actual?.onError(throwable)
             }
-        })
+        }
     }
 
 }

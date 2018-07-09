@@ -10,13 +10,13 @@ class InsertManyMono<T>(private val reactiveCollection: ReactiveCollection<T>,
                         private val insertManyOptions: InsertManyOptions) : Mono<Void>() {
 
     override fun subscribe(actual: CoreSubscriber<in Void>?) {
-        reactiveCollection.nativeCollection.insertMany(documents, insertManyOptions, { void, throwable ->
+        reactiveCollection.nativeCollection.insertMany(documents, insertManyOptions) { void, throwable ->
             if (throwable == null) {
                 actual?.onNext(void)
             } else {
                 actual?.onError(throwable)
             }
-        })
+        }
     }
 
 }
