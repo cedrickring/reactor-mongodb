@@ -6,7 +6,7 @@
 
     <groupId>com.github.cedrickring</groupId>
     <artifactId>reactor-mongodb</artifactId>
-    <version>1.7</version>
+    <version>1.7.1</version>
     <description>A wrapper above the mongodb-async api with Reactor (http://projectreactor.io/)</description>
 
     <properties>
